@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fbf4e7;
+  --color-ink: #171313;
+  --color-panel: #fff9ed;
+  --color-punch: #d31616;
+  --color-blush: #f7d2c9;
+  --shadow-manga: 5px 5px 0 #171313;
+  --font-display: Georgia;
+  --font-body: Arial;
+  --border-width-3: 3px;
+}
+
+:root {
+  --font-display: "Georgia";
+  --font-body: "Arial";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #171313;
+  background:
+    radial-gradient(circle at 12px 12px, rgba(23, 19, 19, 0.08) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #fbf4e7 0%, #fff9ed 52%, #f6e9d8 100%);
+  font-family: var(--font-body), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: #d31616;
+  color: #fff9ed;
+}
+
+.manga-panel {
+  border: 3px solid #171313;
+  background: #fff9ed;
+  box-shadow: 5px 5px 0 #171313;
+}
+
+.manga-panel-soft {
+  border: 2px solid #171313;
+  background: rgba(255, 249, 237, 0.9);
+  box-shadow: 3px 3px 0 #171313;
+}
+
+.halftone {
+  background-image:
+    radial-gradient(circle, rgba(23, 19, 19, 0.16) 1px, transparent 1.2px);
+  background-size: 10px 10px;
+}
+
+.slash-title {
+  text-shadow: 2px 2px 0 #fff9ed, 4px 4px 0 #171313;
+  letter-spacing: 0;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid #d31616;
+  outline-offset: 3px;
+}
+
+.manga-cta {
+  color: #fff9ed;
+}
+
+.manga-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #fff9ed;
+}
+
+.manga-art-contain {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff9ed;
+}
