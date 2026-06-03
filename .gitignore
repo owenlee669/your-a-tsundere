@@ -1,8 +1,12 @@
 node_modules
 .pnpm-store
+.pnpm-store-fresh
 .next
+.open-next
+.wrangler
 out
 dist
+tsconfig.tsbuildinfo
 .env
 .env.local
 .vercel
@@ -11,3 +15,4 @@ npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+build-check*.log
