@@ -7,17 +7,18 @@ import { heroResultCardArt } from "@/lib/dere-assets";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Are You a Tsundere? Free Dere Type Quiz",
+  title: "You Are a Tsundere? Take the Dere Type Quiz",
   description:
-    "Take a free 12-question Dere Type Quiz to check if you are Tsundere, Yandere, Kuudere, Dandere, or Deredere. No signup needed.",
+    "Someone said you are such a tsundere? Take the free Dere Type Quiz to see if you are Tsundere, Yandere, Kuudere, Dandere, or Deredere in 12 questions.",
   path: "/",
   keywords: [
+    "you are a tsundere",
     "are you a tsundere",
+    "you are such a tsundere",
+    "google are you a tsundere",
+    "gemini are you a tsundere",
     "dere type quiz",
-    "tsundere quiz",
-    "anime personality quiz",
-    "tsundere vs yandere",
-    "dere types"
+    "tsundere quiz"
   ]
 });
 
@@ -35,10 +36,10 @@ const seoCards = [
     cta: "Compare them"
   },
   {
-    title: "What does tsundere mean?",
-    text: "Read the plain-English meaning, common traits, and why denial is the whole joke.",
-    href: "/dere-types/tsundere",
-    cta: "Read Tsundere"
+    title: "Are You a Yandere?",
+    text: "Check the fictional Yandere side too: intense, dramatic, and strictly anime-only.",
+    href: "/are-you-a-yandere",
+    cta: "Check Yandere"
   }
 ];
 
@@ -46,6 +47,22 @@ const homeFaq = [
   {
     q: "What does Are You a Tsundere mean?",
     a: "It asks whether your answers match the Tsundere anime trope: defensive, easily flustered, and warmer than you want to admit."
+  },
+  {
+    q: "What does \"you are such a tsundere\" mean?",
+    a: "It means someone thinks you are acting cold, proud, or annoyed while still showing that you care. In anime fandom, that mix of denial and affection is classic Tsundere behavior."
+  },
+  {
+    q: "Why did Google say you are a tsundere?",
+    a: "Search trends around Google, Gemini, and Tsundere jokes turned the phrase into a meme. This quiz turns that \"you are a tsundere\" joke into a quick Dere Type result."
+  },
+  {
+    q: "Is Gemini calling me a tsundere too?",
+    a: "Maybe. People search phrases like \"gemini are you a tsundere\" because AI answers and autocomplete made the line funny. The quiz is here so you can test the joke properly."
+  },
+  {
+    q: "Are you a Yandere instead?",
+    a: "You might be. The same quiz can return Yandere, Tsundere, Kuudere, Dandere, or Deredere. Yandere is treated only as a fictional anime trope, not real advice."
   },
   {
     q: "How does the Dere Type Quiz work?",
@@ -75,8 +92,8 @@ export default function Home() {
         applicationCategory: "EntertainmentApplication",
         operatingSystem: "Any",
         description:
-          "A free 12-question Dere Type Quiz for Tsundere, Yandere, Kuudere, Dandere, and Deredere results.",
-        url: process.env.NEXT_PUBLIC_SITE_URL || "https://deretypequiz.com"
+          "A free 12-question Dere Type Quiz for people wondering if you are a Tsundere, Yandere, Kuudere, Dandere, or Deredere.",
+        url: process.env.NEXT_PUBLIC_SITE_URL || "https://youareatsundere.com"
       },
       {
         "@type": "FAQPage",
@@ -106,7 +123,8 @@ export default function Home() {
             Are You a <span className="text-punch">Tsundere?!</span>
           </h1>
           <p className="relative mt-6 max-w-2xl text-lg font-semibold leading-8 md:text-xl">
-            Take the 12-question Dere Type Quiz and discover if you&apos;re
+            Someone said you are a tsundere, or maybe Google did? Take the
+            12-question Dere Type Quiz and discover if you&apos;re
             Tsundere, Yandere, Kuudere, Dandere, or Deredere.
           </p>
           <div className="relative mt-7 flex flex-wrap items-center gap-4">
@@ -181,6 +199,11 @@ export default function Home() {
 
       <section className="mx-auto mt-14 max-w-6xl manga-panel p-6 md:p-8">
         <p className="text-sm font-black uppercase text-punch">How it works</p>
+        <p className="mt-3 max-w-3xl leading-7">
+          The phrase <strong>you are a tsundere</strong> works because it sounds like an accusation and a joke at the same time.
+          If someone says <strong>you are such a tsundere</strong>, they usually mean you are acting prickly while still showing care.
+          This quiz keeps that meme energy, then sorts your answers into one clear Dere type.
+        </p>
         <div className="mt-4 grid gap-6 md:grid-cols-3">
           {[
             ["Answer 12 questions", "Pick the option that feels painfully accurate. Denial counts."],

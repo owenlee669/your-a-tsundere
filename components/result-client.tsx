@@ -241,6 +241,14 @@ export function ResultClient() {
           </p>
         )}
       </section>
+      <section className="mx-auto mt-6 max-w-6xl manga-panel-soft p-6">
+        <h2 className="font-display text-3xl font-black">What to do with this result</h2>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <Info title="Read the meaning" items={[`Open the ${type.name} meaning page if you want the full trope explanation, common signs, and safe fandom context.`]} />
+          <Info title="Compare nearby types" items={["Tsundere, Yandere, Kuudere, Dandere, and Deredere can overlap in anime characters. Your score shows the strongest match, not a fixed label."]} />
+          <Info title="Share the card" items={["Download the manga-style result card or copy your result link if you want to send the quiz result to friends."]} />
+        </div>
+      </section>
       <SiteFooter />
     </main>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://deretypequiz.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://youareatsundere.com";
 export const siteName = "DereType Quiz";
 
 type PageMetadataInput = {

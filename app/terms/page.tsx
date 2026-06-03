@@ -7,7 +7,8 @@ export const metadata: Metadata = pageMetadata({
   title: "Terms of Use",
   description:
     "Read the DereType Quiz terms. The quiz is for anime fandom entertainment and is not a psychological diagnosis.",
-  path: "/terms"
+  path: "/terms",
+  keywords: ["DereType Quiz terms", "quiz terms of use", "anime quiz disclaimer"]
 });
 
 export default function TermsPage() {

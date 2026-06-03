@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
 import { dereTypes } from "@/lib/quiz-data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://deretypequiz.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://youareatsundere.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const routes = [
     "",
     "/quiz",
+    "/are-you-a-yandere",
     "/dere-types",
     "/tsundere-vs-yandere",
     "/privacy",

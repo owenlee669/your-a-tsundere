@@ -6,11 +6,11 @@ import { siteName, siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Are You a Tsundere? Take the Dere Type Quiz",
+    default: "You Are a Tsundere? Take the Dere Type Quiz",
     template: `%s | ${siteName}`
   },
   description:
-    "Take a free 12-question Dere Type Quiz to find out if you're Tsundere, Yandere, Kuudere, Dandere, or Deredere. No login, no email, just emotional damage.",
+    "Take a free 12-question Dere Type Quiz to see if you are Tsundere, Yandere, Kuudere, Dandere, or Deredere. No login needed.",
   alternates: {
     canonical: "/"
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }]
   },
   openGraph: {
-    title: "Are You a Tsundere? Take the Dere Type Quiz",
+    title: "You Are a Tsundere? Take the Dere Type Quiz",
     description:
       "Find your Dere type with a free 12-question anime personality quiz.",
     url: siteUrl,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Are You a Tsundere? Take the Dere Type Quiz",
+    title: "You Are a Tsundere? Take the Dere Type Quiz",
     description:
       "Find your Dere type with a free 12-question anime personality quiz.",
     images: ["/og"]

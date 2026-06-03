@@ -9,6 +9,7 @@ export function SiteFooter() {
         </p>
         <div className="flex flex-wrap gap-4 font-bold">
           <Link href="/quiz" className="hover:text-punch">Quiz</Link>
+          <Link href="/are-you-a-yandere" className="hover:text-punch">Yandere</Link>
           <Link href="/dere-types" className="hover:text-punch">Dere Types</Link>
           <Link href="/privacy" className="hover:text-punch">Privacy</Link>
           <Link href="/terms" className="hover:text-punch">Terms</Link>

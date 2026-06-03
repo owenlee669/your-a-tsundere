@@ -7,7 +7,8 @@ export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
   description:
     "Read the DereType Quiz privacy policy. The quiz runs without login, email collection, or saving individual answers.",
-  path: "/privacy"
+  path: "/privacy",
+  keywords: ["DereType Quiz privacy", "quiz privacy policy", "anime quiz privacy"]
 });
 
 export default function PrivacyPage() {
