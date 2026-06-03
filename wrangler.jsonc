@@ -18,6 +18,14 @@
     }
   ],
   "vars": {
-    "NEXT_PUBLIC_SITE_URL": "https://youareatsundere.com"
+    "NEXT_PUBLIC_SITE_URL": "https://youareatsundere.com",
+    "NEXT_PUBLIC_GA_ID": "G-1WT8612RW1",
+    "NEXT_PUBLIC_UMAMI_WEBSITE_ID": "180f0e01-ef4d-44bb-b636-d02a316a1b6b",
+    "NEXT_PUBLIC_UMAMI_SRC": "https://umami.jinbai.online/script.js",
+    "NEXT_PUBLIC_UMAMI_RECORDER_SRC": "https://umami.jinbai.online/recorder.js",
+    "NEXT_PUBLIC_UMAMI_REPLAY_SAMPLE_RATE": "0.15",
+    "NEXT_PUBLIC_UMAMI_REPLAY_MASK_LEVEL": "moderate",
+    "NEXT_PUBLIC_UMAMI_REPLAY_MAX_DURATION": "300000",
+    "NEXT_PUBLIC_CLARITY_ID": "x1azmjkk74"
   }
 }
