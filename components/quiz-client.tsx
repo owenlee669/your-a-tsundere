@@ -14,9 +14,17 @@ export function QuizClient() {
   const question = quizQuestions[index];
   const progress = useMemo(() => ((index + 1) / quizQuestions.length) * 100, [index]);
 
+  function trackQuizEvent(name: string, params?: Record<string, string | number | boolean | undefined>) {
+    try {
+      trackEvent(name, params);
+    } catch {
+      // Analytics must never block the quiz flow.
+    }
+  }
+
   function choose(optionIndex: number) {
     if (index === 0 && answers.length === 0) {
-      trackEvent("quiz_start");
+      trackQuizEvent("quiz_start");
     }
 
     const nextAnswers = [...answers];
@@ -30,7 +38,7 @@ export function QuizClient() {
           JSON.stringify({ answers: nextAnswers, result: calculated.result, scores: calculated.scores })
         );
       }
-      trackEvent("quiz_complete", { result_type: calculated.result });
+      trackQuizEvent("quiz_complete", { result_type: calculated.result });
       router.push(`/result?type=${calculated.result}`);
       return;
     }
@@ -69,6 +77,7 @@ export function QuizClient() {
             {question.options.map((option, optionIndex) => (
               <button
                 key={option.text}
+                type="button"
                 onClick={() => choose(optionIndex)}
                 className="focus-ring group border-3 border-ink bg-white p-4 text-left font-bold shadow-[3px_3px_0_#171313] transition-transform hover:-translate-y-0.5 hover:bg-blush"
               >
@@ -81,6 +90,7 @@ export function QuizClient() {
           </div>
           <div className="mt-6 flex justify-between">
             <button
+              type="button"
               onClick={goBack}
               disabled={index === 0}
               className="focus-ring rounded-sm font-black underline decoration-2 underline-offset-4 disabled:cursor-not-allowed disabled:opacity-35"

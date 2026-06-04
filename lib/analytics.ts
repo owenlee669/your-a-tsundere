@@ -16,8 +16,12 @@ export function trackEvent(name: string, params: EventParams = {}) {
     clarity?: (...args: unknown[]) => void;
   };
 
-  win.gtag?.("event", name, payload);
-  win.plausible?.(name, { props: payload });
-  win.umami?.track?.(name, payload);
-  win.clarity?.("event", name);
+  try {
+    win.gtag?.("event", name, payload);
+    win.plausible?.(name, { props: payload });
+    win.umami?.track?.(name, payload);
+    win.clarity?.("event", name);
+  } catch {
+    // Tracking should not interrupt user-facing interactions.
+  }
 }
