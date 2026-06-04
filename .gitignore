@@ -16,3 +16,8 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 build-check*.log
+home-check.png
+home-styled-check.png
+*.doc
+public/images/dere/*.png
+public/images/logo/deretype-logo.png
