@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/quiz",
+    "/are-you-a-tsundere-google",
     "/are-you-a-yandere",
     "/dere-types",
     "/tsundere-vs-yandere",

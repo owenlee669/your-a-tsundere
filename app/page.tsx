@@ -40,13 +40,19 @@ const seoCards = [
     text: "Check the fictional Yandere side too: intense, dramatic, and strictly anime-only.",
     href: "/are-you-a-yandere",
     cta: "Check Yandere"
+  },
+  {
+    title: "Why is Google saying you're a tsundere?",
+    text: "Autocomplete made it weird. Here is the meme, the anime meaning, and the quiz.",
+    href: "/are-you-a-tsundere-google",
+    cta: "See the trend"
   }
 ];
 
 const homeFaq = [
   {
     q: "What does Are You a Tsundere mean?",
-    a: "It asks whether your answers match the Tsundere anime trope: defensive, easily flustered, and warmer than you want to admit."
+    a: "Basically: are you the type who acts cold when you actually care? The quiz checks that Tsundere pattern against the other Dere types."
   },
   {
     q: "What does \"you are such a tsundere\" mean?",
@@ -54,7 +60,7 @@ const homeFaq = [
   },
   {
     q: "Why did Google say you are a tsundere?",
-    a: "Search trends around Google, Gemini, and Tsundere jokes turned the phrase into a meme. This quiz turns that \"you are a tsundere\" joke into a quick Dere Type result."
+    a: "Autocomplete and AI answers made the phrase feel like Google was calling people out. This quiz turns that \"you are a tsundere\" joke into a quick Dere Type result."
   },
   {
     q: "Is Gemini calling me a tsundere too?",
@@ -62,7 +68,7 @@ const homeFaq = [
   },
   {
     q: "Are you a Yandere instead?",
-    a: "You might be. The same quiz can return Yandere, Tsundere, Kuudere, Dandere, or Deredere. Yandere is treated only as a fictional anime trope, not real advice."
+    a: "Maybe. The same quiz can return Yandere, Tsundere, Kuudere, Dandere, or Deredere. We keep Yandere strictly in anime territory."
   },
   {
     q: "How does the Dere Type Quiz work?",
@@ -70,11 +76,11 @@ const homeFaq = [
   },
   {
     q: "Is this a real personality test?",
-    a: "No. This is an anime personality quiz for fandom fun. It is not a psychological diagnosis or relationship advice."
+    a: "No. It is an anime quiz, not therapy homework or relationship advice."
   },
   {
     q: "Can I get a Yandere result?",
-    a: "Yes. Yandere is one possible result, but the quiz treats it as a fictional anime trope and keeps the real-world safety line clear."
+    a: "Yes. Yandere is one possible result, but it stays a fiction thing, full stop."
   },
   {
     q: "Can I share my result?",

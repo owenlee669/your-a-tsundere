@@ -44,12 +44,19 @@ export function ResultClient() {
     return stored?.result || "tsundere";
   }, [queryType, stored?.result]);
 
+  const hasResult = isDereType(queryType) || !!stored;
   const type = typeBySlug[resultSlug];
-  const scores = stored?.scores || getInitialScores();
+  const scores = useMemo(() => {
+    if (stored?.scores) return stored.scores;
+    const fallback = getInitialScores();
+    fallback[resultSlug] = 1;
+    return fallback;
+  }, [resultSlug, stored?.scores]);
 
   useEffect(() => {
+    if (!hasResult) return;
     trackEvent("quiz_result_view", { result_type: resultSlug });
-  }, [resultSlug]);
+  }, [hasResult, resultSlug]);
 
   async function downloadCard() {
     const resultImage = await loadCanvasImage(dereArt[resultSlug]);
@@ -179,6 +186,30 @@ export function ResultClient() {
       });
       window.setTimeout(() => setCopied(null), 1600);
     }
+  }
+
+  if (!hasResult) {
+    return (
+      <main className="min-h-screen px-5 py-4">
+        <SiteHeader />
+        <section className="mx-auto max-w-3xl py-12">
+          <div className="manga-panel p-6 md:p-8">
+            <p className="text-sm font-black uppercase text-punch">No result yet</p>
+            <h1 className="mt-3 font-display text-5xl font-black leading-none md:text-7xl">
+              Take the Quiz First
+            </h1>
+            <p className="mt-5 text-xl font-bold leading-8">
+              Result links need a type, like <span className="text-punch">/result?type=tsundere</span>.
+              If you landed here without one, start the quiz and get your own card.
+            </p>
+            <Link href="/quiz" className="focus-ring mt-6 inline-flex rounded-md border-3 border-ink bg-punch px-5 py-3 font-black text-white shadow-manga">
+              Start Quiz, Baka
+            </Link>
+          </div>
+        </section>
+        <SiteFooter />
+      </main>
+    );
   }
 
   return (

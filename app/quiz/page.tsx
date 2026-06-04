@@ -18,5 +18,26 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function QuizPage() {
-  return <QuizClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Dere Type Quiz",
+    applicationCategory: "EntertainmentApplication",
+    operatingSystem: "Any",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://youareatsundere.com"}/quiz`,
+    description:
+      "A free 12-question anime quiz that checks Tsundere, Yandere, Kuudere, Dandere, and Deredere answer patterns.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD"
+    }
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <QuizClient />
+    </>
+  );
 }

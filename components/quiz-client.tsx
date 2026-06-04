@@ -104,14 +104,20 @@ export function QuizClient() {
       <section className="mx-auto mt-8 max-w-3xl manga-panel-soft p-5">
         <h2 className="font-display text-2xl font-black">About this Dere Type Quiz</h2>
         <p className="mt-3 leading-7">
-          This Dere Type Quiz checks five anime affection tropes with one short flow: Tsundere, Yandere,
-          Kuudere, Dandere, and Deredere. Each answer adds points to one or more Dere types, then the
-          highest score becomes your result.
+          This Dere Type Quiz checks five anime affection tropes in one run: Tsundere, Yandere,
+          Kuudere, Dandere, and Deredere. Each answer nudges your score toward one or more types.
+          If you keep picking denial, pride, and accidental kindness, the quiz starts leaning Tsundere.
+          If you pick calm distance, shy silence, open warmth, or dramatic anime intensity, the score moves somewhere else.
         </p>
         <p className="mt-3 leading-7">
-          Use it when someone says you are a tsundere, when you want to compare Tsundere vs Yandere,
-          or when you want a quick anime personality quiz result to share. The quiz is for fandom fun,
-          not a real diagnosis.
+          Use it when someone says you are a tsundere, when Google makes the phrase feel personal,
+          or when you want to compare Tsundere vs Yandere without opening ten tabs. The result is a fandom label
+          and a share card, not a personality file.
+        </p>
+        <p className="mt-3 leading-7">
+          The quiz is short on purpose. You answer 12 scene-style questions, get one strongest match,
+          then copy your result link or download the manga-style card. If the result feels a little too accurate,
+          that is between you and the group chat.
         </p>
       </section>
     </main>

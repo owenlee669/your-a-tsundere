@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Terms of Use",
   description:
-    "Read the DereType Quiz terms. The quiz is for anime fandom entertainment and is not a psychological diagnosis.",
+    "Read the DereType Quiz terms for result cards, anime trope labels, and responsible use.",
   path: "/terms",
   keywords: ["DereType Quiz terms", "quiz terms of use", "anime quiz disclaimer"]
 });
@@ -29,7 +29,7 @@ export default function TermsPage() {
         <section className="mt-6 grid gap-5">
           <Block
             title="Entertainment only"
-            text="The quiz result is not a diagnosis, assessment, or professional opinion. It is a fictional archetype label based on your selected answers."
+            text="The quiz result is a fictional archetype label based on your selected answers. Treat it like fandom shorthand, not professional advice."
           />
           <Block
             title="Fictional tropes"

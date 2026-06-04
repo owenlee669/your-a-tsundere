@@ -49,7 +49,7 @@ const trendFaq: Record<DereTypeSlug, { q: string; a: string }[]> = {
     },
     {
       q: "Is \"you are a tsundere\" the same as \"are you a tsundere\"?",
-      a: "They point to the same idea. One sounds like someone accusing you of Tsundere behavior, while the other sounds like a quiz question."
+      a: "Same idea, different wording. One sounds like someone calling you out; the other sounds like the quiz version."
     }
   ],
   yandere: [
@@ -98,6 +98,34 @@ const trendFaq: Record<DereTypeSlug, { q: string; a: string }[]> = {
   ]
 };
 
+const typeParagraphs: Record<DereTypeSlug, string[]> = {
+  tsundere: [
+    "Tsundere works because the words and the actions keep disagreeing. The character says they do not care, then remembers your favorite snack, walks you home, or gets weirdly mad when someone else treats you badly.",
+    "That push-pull is why Tsundere is one of the easiest anime tropes to recognize. It is not about being mean for no reason. The fun is watching someone act cold when they obviously care.",
+    "In the quiz, Tsundere answers usually sound proud, defensive, and a little too embarrassed by affection."
+  ],
+  yandere: [
+    "Yandere belongs in anime drama. The trope is built around devotion that gets too intense, which is why it can be memorable on-screen and a terrible model for real life.",
+    "For this site, Yandere means big fictional feelings, possessive character energy, and scenes that go off the rails fast. We keep it strictly in anime territory.",
+    "In the quiz, Yandere answers lean dramatic, attached, and over-the-top. The result is a trope label, not advice."
+  ],
+  kuudere: [
+    "Kuudere characters do not need loud reactions to make a point. They stay calm, keep their face under control, and let small actions do most of the talking.",
+    "That does not mean they are empty or cold inside. A Kuudere may care a lot, but the signal is quiet: a short message, a practical favor, or one perfectly timed sentence.",
+    "In the quiz, Kuudere answers usually choose calm, distance, dry humor, and low-drama affection."
+  ],
+  dandere: [
+    "Dandere is the quiet type who needs safety before the words come out. They may seem hard to approach at first, but the real pattern is shyness, not indifference.",
+    "A Dandere moment is often small: avoiding attention, replaying a conversation later, or opening up only when the pressure drops.",
+    "In the quiz, Dandere answers lean shy, careful, observant, and soft-spoken."
+  ],
+  deredere: [
+    "Deredere is the most direct of the Dere types. The affection is not hidden behind pride, silence, or a cool face. It is right there.",
+    "That openness can be funny because it leaves no mystery. A Deredere character smiles first, supports loudly, and makes warmth feel normal.",
+    "In the quiz, Deredere answers usually pick cheerful honesty, quick affection, and zero emotional poker face."
+  ]
+};
+
 export function generateStaticParams() {
   return dereTypes.map((type) => ({ slug: type.slug }));
 }
@@ -127,8 +155,8 @@ export default async function DereTypePage({ params }: { params: Promise<{ slug:
       a: type.definition
     },
     {
-      q: `Is ${type.name} a real diagnosis?`,
-      a: "No. Dere types are fandom archetypes for entertainment, not psychological diagnoses."
+      q: `Is ${type.name} a serious label?`,
+      a: "No. Treat Dere types like anime shorthand, not a personality file."
     },
     ...trendFaq[type.slug]
   ];
@@ -168,7 +196,7 @@ export default async function DereTypePage({ params }: { params: Promise<{ slug:
           <p className="mt-5 text-xl font-bold leading-8">{type.definition}</p>
           <p className="mt-4 leading-7">
             This {type.name} meaning page explains the trope, the common signs, and the kind of quiz answers that
-            lead to this result. Use it as fandom context, then take the Dere Type Quiz if you want your own result.
+            lead to this result. Read it for fandom context, then take the Dere Type Quiz if you want your own card.
           </p>
           <Link
             href="/quiz"
@@ -182,6 +210,16 @@ export default async function DereTypePage({ params }: { params: Promise<{ slug:
         <Block title="Strengths" items={type.strengths} />
         <Block title="Weak spots" items={type.weakSpots} />
         <Block title="Common misconception" items={[type.misconception]} />
+      </section>
+      <section className="mx-auto mt-6 max-w-6xl manga-panel-soft p-6 md:p-8">
+        <h2 className="font-display text-3xl font-black">{type.name} meaning in anime</h2>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          {typeParagraphs[type.slug].map((paragraph) => (
+            <p key={paragraph} className="leading-7">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </section>
       <section className="mx-auto mt-6 max-w-6xl manga-panel p-6">
         <h2 className="font-display text-3xl font-black">Anime vibe</h2>
@@ -200,15 +238,23 @@ export default async function DereTypePage({ params }: { params: Promise<{ slug:
           <div className="border-l-4 border-punch pl-4">
             <h3 className="font-black">What it does not mean</h3>
             <p className="mt-2 leading-7">
-              The result is not a real diagnosis, relationship judgment, or fixed identity. It is a quick fandom label
-              for a result card and a joke with context.
+              Treat the result like a fandom label, not a life assessment. It is a joke you can share,
+              not a relationship report.
             </p>
           </div>
           <div className="border-l-4 border-punch pl-4">
             <h3 className="font-black">What to read next</h3>
             <p className="mt-2 leading-7">
-              Compare this page with the other Dere types if your result feels close. Many anime characters mix traits,
-              but each page keeps one core meaning clear.
+              Compare this page with the other Dere types if your result feels close. Start with the
+              <Link href="/dere-types" className="font-black text-punch underline decoration-2 underline-offset-4"> Dere Types guide</Link>
+              {type.slug === "tsundere" || type.slug === "yandere" ? (
+                <>
+                  {" "}or the
+                  <Link href="/tsundere-vs-yandere" className="font-black text-punch underline decoration-2 underline-offset-4"> Tsundere vs Yandere comparison</Link>.
+                </>
+              ) : (
+                "."
+              )}
             </p>
           </div>
         </div>
