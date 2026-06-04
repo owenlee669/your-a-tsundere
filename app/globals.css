@@ -81,6 +81,31 @@ input {
   color: #fff9ed;
 }
 
+.manga-nav-tab {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #171313;
+  padding: 0 26px;
+  box-shadow: 3px 3px 0 #171313;
+  transform: skewX(-3deg);
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+.manga-nav-tab:hover {
+  box-shadow: 5px 5px 0 #171313;
+  transform: translateY(-2px) skewX(-3deg);
+}
+
+.manga-nav-tab:nth-child(even) {
+  transform: skewX(2deg);
+}
+
+.manga-nav-tab:nth-child(even):hover {
+  transform: translateY(-2px) skewX(2deg);
+}
+
 .manga-art {
   display: block;
   width: 100%;
