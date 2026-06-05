@@ -13,11 +13,13 @@ function escapeXml(value: string) {
 }
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
+  const url = new URL(request.url);
+  const { searchParams } = url;
   const slug = searchParams.get("type");
   const resultSlug = isDereType(slug) ? slug : "tsundere";
   const type = typeBySlug[resultSlug];
   const tags = type.tags.map(escapeXml);
+  const imageUrl = `${url.origin}/images/dere/${resultSlug}.webp`;
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
@@ -28,6 +30,9 @@ export async function GET(request: Request) {
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="10" dy="10" stdDeviation="0" flood-color="#171313" />
     </filter>
+    <clipPath id="artClip">
+      <rect x="74" y="168" width="324" height="284" />
+    </clipPath>
   </defs>
   <rect width="1200" height="630" fill="#fbf4e7" />
   <rect width="1200" height="630" fill="url(#dots)" />
@@ -39,7 +44,8 @@ export async function GET(request: Request) {
 
   <g filter="url(#shadow)">
     <rect x="66" y="160" width="340" height="300" fill="#fff9ed" stroke="#171313" stroke-width="8" />
-    <text x="236" y="350" text-anchor="middle" fill="${type.color}" font-family="Georgia, serif" font-size="150" font-weight="900">${escapeXml(type.symbol)}</text>
+    <image href="${escapeXml(imageUrl)}" x="74" y="168" width="324" height="284" preserveAspectRatio="xMidYMid slice" clip-path="url(#artClip)" />
+    <rect x="74" y="168" width="324" height="284" fill="none" stroke="#171313" stroke-width="3" />
   </g>
 
   <text x="460" y="190" fill="#171313" font-family="Georgia, serif" font-size="34" font-weight="900">Your Result</text>
