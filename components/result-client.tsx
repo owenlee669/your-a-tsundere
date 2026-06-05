@@ -141,8 +141,11 @@ export function ResultClient() {
     });
 
     context.fillStyle = "#171313";
-    context.font = "900 28px Arial";
-    context.fillText("Free. No login. No email. Just emotional damage.", 104, 1380);
+    context.font = "900 27px Arial";
+    context.fillText("Take the quiz:", 104, 1356);
+    context.fillStyle = type.color;
+    context.font = "900 34px Arial";
+    context.fillText("youareatsundere.com", 104, 1404);
 
     const png = canvas.toDataURL("image/png");
     const link = document.createElement("a");
